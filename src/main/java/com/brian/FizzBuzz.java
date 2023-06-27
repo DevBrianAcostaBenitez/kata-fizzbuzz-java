@@ -3,17 +3,13 @@ package com.brian;
 public class FizzBuzz {
     public String check(int numb) {
         String numberAsString = String.valueOf(numb);
-        if (numb % 3 == 0 && numb % 5 == 0) {
-            return "FizzBuzz";
-        } else if (numb % 3 == 0) {
-            return "Fizz";
-        } else if (numb % 5 == 0) {
-            return "Buzz";
-        } else {
-            return numberAsString;
-        }
-    }
+        String result = "";
 
+        result += (numb % 3 == 0) ? "Fizz" : "";
+        result += (numb % 5 == 0) ? "Buzz" : "";
+        
+        return result.isEmpty() ? numberAsString : result;
+    }
     public String[] fizzBuzzArray() {
         String[] result = new String[100];
         for (int i = 1; i <= 100; i++) {
